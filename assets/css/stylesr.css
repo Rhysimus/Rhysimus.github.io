@@ -1,0 +1,51 @@
+@font-face {
+    font-family: "rhys";
+    src: url("../../assets/fonts/Rhysie-Regular.otf");
+}
+
+@font-face {
+    font-family: "lora";
+    src: url("../../assets/fonts/Lora.ttf");
+}
+html {
+    overflow: auto;
+}
+body {
+    font-family: "lora";
+    background-image: url("../../assets/img/background.png");
+    background-repeat: repeat;
+}
+.header {
+    text-align: center;font-family: 'rhys';font-size: 100px; top: -67px; position: relative;height: 0px;
+}
+.circleimg {
+    width: 140px; height: 140px; border-radius: 50%; margin: auto; margin-top: 10px; margin-bottom: 10px;
+}
+.center {
+    text-align: center;
+}
+.centeralt {
+    position: relative; 
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0;
+}
+p {
+    font-size: 20px;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+.grid30 {
+    margin: 10px 1.66% 10px 1.66%; outline-color: antiquewhite; outline-style: outset; word-wrap: break-word; float:left; width: 29.8%;
+}
+.grid100 {
+    margin: 10px 1.66% 10px 1.66%; outline-color: antiquewhite; outline-style: outset; word-wrap: break-word; float:left; width: 96%;
+}
+a {
+    color: #00688B;
+    text-decoration: none;
+    font-family: 'lora';
+}
+i {
+    height: 50px;
+}
