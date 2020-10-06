@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/e9621d77db.js" crossorigin="anonymous"></script>
+    <title>Rhysimus</title>
+    <style>
+        @font-face {
+            font-family: "rhys";
+            src: url("../assets/fonts/Rhysie-Regular.otf");
+        }
+
+        @font-face {
+            font-family: "lora";
+            src: url("../assets/fonts/Lora.ttf");
+        }
+        html {
+            overflow: auto;
+        }
+        body {
+            font-family: "lora";
+            background-image: url("../assets/img/background.png");
+            background-repeat: repeat;
+        }
+        .header {
+            text-align: center;font-family: 'rhys';font-size: 100px; top: -67px; position: relative;height: 0px;
+        }
+        .circleimg {
+            width: 140px; height: 140px; border-radius: 50%; margin: auto; margin-top: 10px; margin-bottom: 10px;
+        }
+        .center {
+            text-align: center;
+        }
+        .centeralt {
+            position: relative; 
+            left: 50%;
+            transform: translateX(-50%);
+            margin: 0;
+        }
+        p {
+            font-size: 20px;
+            margin-right: 10px;
+            margin-left: 10px;
+        }
+        .grid30 {
+            margin: 10px 1.66% 10px 1.66%; outline-color: antiquewhite; outline-style: outset; word-wrap: break-word; float:left; width: 29.8%;
+        }
+        .grid100 {
+            margin: 10px 1.66% 10px 1.66%; outline-color: antiquewhite; outline-style: outset; word-wrap: break-word; float:left; width: 96%;
+        }
+        a {
+            color: #00688B;
+            text-decoration: none;
+            font-family: 'lora';
+        }
+        i {
+            height: 50px;
+        }
+    </style>
+    <script>
+        function clicked(id){
+            var el = document.getElementById(id).children[1];
+            if(el.hasAttribute("style")){
+                el.removeAttribute("style");
+                document.getElementById(id).scrollIntoView();
+            }
+            else
+            {
+                el.setAttribute("style","display: none;");
+            }
+        }
+
+        function resize() {
+            var journey = document.getElementById("journey");
+            var projects = document.getElementById("projects");
+            var socials = document.getElementById("socials");
+            var header = document.getElementById("header");
+            journey.classList = "";
+            projects.classList = "";
+            socials.classList = "";
+            journey.classList.add('center');
+            projects.classList.add('center');
+            socials.classList.add('center');
+        if(window.innerWidth < 900){
+            //all 100
+            journey.classList.add('grid100');
+            projects.classList.add('grid100');
+            socials.classList.add('grid100');
+            header.style.fontSize = ((window.innerWidth / 900) * 100).toString() + "px";
+            header.style.top = (-((window.innerWidth / 900) * 67)).toString() + "px";
+        }
+        else{
+            //first 3 30
+            journey.classList.add('grid30');
+            projects.classList.add('grid30');
+            socials.classList.add('grid30');
+            header.style.fontSize = "100px";
+            header.style.top = "-67px";
+        }
+    }
+    </script>
+</head>
+<body onresize="resize()">
+    <h1 id="header" class="header">Rhysimus</h1>
+    <img class="centeralt circleimg" src="../assets/img/rhys-face.jpg" alt="">
+    <p class="center">My name is Rhys Morgan, an avid programmer, game designer, and freelancer. I am a technology degree apprentice studying Computer Science at university.</p>
+    <h2 class="center">Click on the cards to expand/shrink!</h2>
+    <div id="journey" class="center" onclick="clicked(this.id)">
+        <h1>Journey</h1>
+        <div style="display: none;">
+            <div class="grid100">
+                <h3>Day 1, Hour 0 (2002)</h3>
+                <img src="../assets/img/1.jpg" class="circleimg">
+                <p>I was born in Shrewsbury, Shropshire.</p>
+            </div>
+            <div class="grid100">
+                <h3>From Toys to Tech (2009)</h3>
+                <img src="../assets/img/2.jpg" class="circleimg">
+                <p>I was introduced to the family computer. The internet is a wonderful place!</p>
+            </div>
+            <div class="grid100">
+                <h3>I'm Hank Marvin (e.2013)</h3>
+                <img src="../assets/img/3.jpg" class="circleimg">
+                <p>Got my first electric guitar, sparking my interest in music and all that is electric.</p>
+            </div>
+            <div class="grid100">
+                <h3>The Start of Me Coding (l.2013)</h3>
+                <img src="../assets/img/4.jpeg" class="circleimg">
+                <p>Was shown the tips and tricks into Scratch. I've been working my way through different languages since.</p>
+            </div>
+            <div class="grid100">
+                <h3>The Power Of Now</h3>
+                <img src="../assets/img/pwc_logo.png" class="circleimg">
+                <p>And here we are today! Time has certainly gone fast but am very proud of where I am now. Knowing that I can push myself has helped me create who I am at this very moment, to develop what I develop and to build myself as a character and personality.</p>
+                <p style="margin-top: 0px;">Take those one-in-a-lifetime opportunities - you don't know if you'll get it back again. Get yourself out there. Do that one thing you know you want to do - just like me making this website. Believe in who you are, your ideas matter. You matter. Have hope. Persevere. Overcome. :)</p>
+            
+            </div>
+        </div>
+    </div>
+    <div id="projects" class="center" onclick="clicked(this.id)">
+        <h1>Projects</h1>
+        <div style="display: none;">
+            <div class="grid100">
+                <h3>Tikki</h3>
+                <img src="../assets/img/tikki-shot.PNG" alt="" style="width: 50%;">
+                <p>This is a project of mine focused on streaming. Invite your friends, family or complete strangers to a party to get together and play around with a in-built browser.</p>
+                <p style="margin-top: 0px;">Watch movies, play games, read something, listen to music - the opportunities are endless with this.</p>
+                <p style="margin-top: 0px;">Click <a href="https://youtu.be/SlrsdtkRe3s" target="_blank">here</a> for more info.</p>
+            </div>
+            <div class="grid100">
+                <h3>Aria Disconnect</h3>
+              <img src="../assets/img/aria-shot.jpg" alt="" style="width: 50%;">
+              <p><a href="https://store.steampowered.com/app/1269910/Aria_Disconnect/" target="_blank">Aria Disconnect</a> is a 16-bit action-adventure. You are the protagonist Heri and you are going to follow the journey of his life crisis. The year is 2082, you are hooked to a machine, and there is only one way out, to disconnect.</p>
+              <p style="margin-top: 0px;"><a href="https://twitter.com/ariadisconnect?lang=en" target="_blank">Kimmo Savilampi</a> is the wonder behind all of this. I'm helping create systems like this <a href="https://twitter.com/i/status/1303933818613780481" target="_blank">ring menu</a>, but more notably large scale projects like a water physics system and a live midi player (more on this at a later date - look out on YouTube!).</p>
+              <p style="margin-top: 0px;">Click <a href="https://store.steampowered.com/app/1269910/Aria_Disconnect/" target="_blank">here</a> to wishlist it on Steam!</p>
+            </div>
+            <div class="grid100">
+                <h3>The Impact of Computers in Medical Conditions</h3>
+              <p>This is a piece of work I created for my EPQ, resulting in an A*.</p>
+              <p style="margin-top: 0px;">It covers how computers and technology has been used within prominent conditions - from general applications of hospital information systems to the care of critically ill patients.</p>
+              <p>Links are then made between the conditions and these uses, with suggestions and current uses specifically towards them.</p>
+              <p style="margin-top: 0px;">The future of technology in medicine is also explored here, to bring it all together to conclude the impact of computers in medical conditions.</p>
+              <p style="margin-top: 0px;">If you wish to read this piece of work, please click <a href="" target="_blank">here</a>. (link to be added when article is published)</p>
+            </div>
+        </div>
+    </div>
+    <div id="socials" class="center" onclick="clicked(this.id)">
+        <h1>Socials</h1>
+        <div style="display: none;">
+            <div class="grid100">
+              <i class="fab fa-linkedin" style="color: #2867B2; font-size: 3em; margin: 20px;"><a href="https://www.linkedin.com/in/rhysimus/" target="_blank"><h2 style="font-size: 30px;">LinkedIn</h2></a></i>
+              <i class="fab fa-github" style="color: #211F1F; font-size: 3em; margin: 20px;"><a href="https://github.com/rhysimus" target="_blank"><h2 style="font-size: 30px;">GitHub</h2></a></i>
+              <i class="fab fa-youtube" style="color: #FF0000; font-size: 3em; margin: 20px;"><a href="https://www.youtube.com/channel/UCmZOYuFDTigdU3zVU4IrqBQ" target="_blank"><h2 style="font-size: 30px;">YouTube</h2></a></i>
+              <i class="fab fa-discord" style="color: #7289da; font-size: 3em; margin: 20px;"><a href="https://discord.gg/TgWNxUH" target="_blank"><h2 style="font-size: 30px;">Discord</h2></a></i>
+              <i class="fa fa-coffee" style="color: lightgray; font-size: 3em; margin: 20px;"><a href="https://ko-fi.com/rhysimus" target="_blank"><h2 style="font-size: 30px;">Ko-Fi</h2></a></i>
+              <i class="fas fa-envelope" style="font-size: 3em; margin: 20px;"><a href="mailto:rhys.morgan@rhysimus.com" target="_blank"><h2 style="font-size: 30px;">Mail</h2></a></i>
+              <p></p>
+            </div>
+        </div>
+    </div>
+    <div id="contact" class="grid100 center" onclick="clicked(this.id)">
+        <h1>Contact</h1>
+        <div style="display: none;">
+            <p>If you wish to contact me, please do so by dropping me an <a href="mailto:rhys.morgan@rhysimus.com" target="_blank">email</a> or a message on <a href="https://www.linkedin.com/in/rhysimus/" target="_blank">LinkedIn</a>. Thank you in advance!</p>
+        </div>
+    </div>
+    <div style="font-family: 'lora';font-size: 15px;text-align: center;">Want to try the interactive library of me? Click <a href="../">here</a>.</div> 
+</body>
+<script>
+    resize();
+</script>
+</html>

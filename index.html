@@ -1,31 +1,319 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <script src="https://kit.fontawesome.com/e9621d77db.js" crossorigin="anonymous"></script>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rhysimus - coming soon...</title>
-    <style>
-        @font-face {
-        font-family: "rhysie";
-        src: url("assets/Rhysie-Regular.otf");
-        }
-
-        body {
-        font-family: "rhysie";
-        }
-        body 
-        {
-          background-color: #EAE7DC;
-          background-image: url("assets/background.png");
-          background-repeat: repeat;
-        }
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=0">
+    <title>Rhysimus</title>
+    <script src="assets/js/script.js"></script>
 </head>
-<body>
-    <h1 style="position: absolute;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 100px;">Coming soon...</h1>
+<body onresize="resize()">
+    <div id="header" class="header">
+        <h1>Rhysimus</h1>
+        <div>An interactive library all about me. Click on and off books to open and close them.</div>
+    </div>
+
+    
+<form class="container" id="bookcase">
+    <input type="radio" name="title" id="book1"/>
+    <input type="radio" name="title" id="book2"/>
+    <input type="radio" name="title" id="book3"/>
+    <input type="radio" name="title" id="book4"/>
+    <input type="radio" name="title" id="book5"/>
+    <input type="radio" name="title" id="book6"/>
+    <input type="radio" name="title" id="book7"/>
+    <input type="radio" name="title" id="book8"/>
+    <input type="radio" name="title" id="book9"/>
+    <input type="radio" name="title" id="book10"/>
+    <input type="radio" name="title" id="book11"/>
+    <div class="surface" id="surface">
+      <div class="block b1">
+        <div class="block-inner">
+          <div class="back"></div>
+          <div class="bottom"></div>
+          <div class="front"></div>
+          <div class="left"></div>
+          <div class="right"></div>
+          <div class="top"></div>
+        </div>
+      </div>
+      <div class="block b2">
+        <div class="block-inner">
+          <div class="back"></div>
+          <div class="bottom"></div>
+          <div class="front"></div>
+          <div class="left"></div>
+          <div class="right"></div>
+          <div class="top"></div>
+        </div>
+      </div>
+      <div class="block b3">
+        <div class="block-inner">
+          <div class="back"></div>
+          <div class="bottom"></div>
+          <div class="front"></div>
+          <div class="left"></div>
+          <div class="right"></div>
+          <div class="top"></div>
+        </div>
+      </div>
+      <div class="block b4">
+        <div class="block-inner">
+          <div class="back"></div>
+          <div class="bottom"></div>
+          <div class="front"></div>
+          <div class="left"></div>
+          <div class="right"></div>
+          <div class="top"></div>
+        </div>
+      </div>
+      <div class="block b5">
+        <div class="block-inner">
+          <div class="back"></div>
+          <div class="bottom"></div>
+          <div class="front"></div>
+          <div class="left"></div>
+          <div class="right"></div>
+          <div class="top"></div>
+        </div>
+      </div>
+      <label class="block b6" for="book1">
+        <div class="block-inner">
+          <div class="back"></div>
+          <div class="bottom"></div>
+          <div class="front">
+            <div class="spine">About</div>
+          </div>
+          <div class="left"></div>
+          <div class="right" data-title="About">
+            <div class="cover"></div>
+            <div class="contents">
+              <h3>About me</h3>
+              <img src="assets/img/rhys-face.jpg" alt="" class="circleimg">
+              <p>My name is Rhys Morgan, an avid programmer, game designer, and freelancer. I am a technology degree apprentice studying Computer Science at university. Please have a look at the other books! There's plenty more information about me.</p>
+            </div>
+          </div>
+          <div class="top"></div>
+        </div>
+      </label>
+      <label class="block b7" for="book2">
+        <div class="block-inner">
+          <div class="back"></div>
+          <div class="bottom"></div>
+          <div class="front">
+            <div class="spine">Journey</div>
+          </div>
+          <div class="left"></div>
+          <div class="right" data-title="Journey">
+            <div class="cover"></div>
+            <div class="contents">
+              <h3>Day 1, Hour 0 (2002)</h3>
+              <img src="assets/img/1.jpg" class="circleimg">
+              <p>I was born in Shrewsbury, Shropshire.</p>
+              <h3>From Toys to Tech (2009)</h3>
+              <img src="assets/img/2.jpg" class="circleimg">
+              <p>I was introduced to the family computer. The internet is a wonderful place!</p>
+              <h3>I'm Hank Marvin (e.2013)</h3>
+              <img src="assets/img/3.jpg" class="circleimg">
+              <p>Got my first electric guitar, sparking my interest in music and all that is electric.</p>
+              <h3>The Start of Me Coding (l.2013)</h3>
+              <img src="assets/img/4.jpeg" class="circleimg">
+              <p>Was shown the tips and tricks into Scratch. I've been working my way through different languages since.</p>
+              <h3>The Power Of Now</h3>
+              <img src="assets/img/pwc_logo.png" class="circleimg">
+              <p>And here we are today! Time has certainly gone fast but am very proud of where I am now. Knowing that I can push myself has helped me create who I am at this very moment, to develop what I develop and to build myself as a character and personality.</p>
+              <p style="margin-top: 0px;">Take those one-in-a-lifetime opportunities - you don't know if you'll get it back again. Get yourself out there. Do that one thing you know you want to do - just like me making this website. Believe in who you are, your ideas matter. You matter. Have hope. Persevere. Overcome. :)</p>
+            </div>
+          </div>
+          <div class="top"></div>
+        </div>
+      </label>
+      <label class="block b8 hidden" for="book3">
+        <div class="block-inner">
+          <div class="back"></div>
+          <div class="bottom"></div>
+          <div class="front">
+            <div class="spine"></div>
+          </div>
+          <div class="left"></div>
+          <div class="right" data-title="">
+            <div class="cover"></div>
+            <div class="contents">
+              <h1>Chapter 1</h1>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </div>
+          </div>
+          <div class="top"></div>
+        </div>
+      </label>
+      <label class="block b9 hidden" for="book4">
+        <div class="block-inner">
+          <div class="back"></div>
+          <div class="bottom"></div>
+          <div class="front">
+            <div class="spine"></div>
+          </div>
+          <div class="left"></div>
+          <div class="right" data-title="">
+            <div class="cover"></div>
+            <div class="contents">
+              <h1>Chapter 1</h1>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </div>
+          </div>
+          <div class="top"></div>
+        </div>
+      </label>
+      <label class="block b10" for="book5">
+        <div class="block-inner">
+          <div class="back"></div>
+          <div class="bottom"></div>
+          <div class="front">
+            <div class="spine">Tikki</div>
+          </div>
+          <div class="left"></div>
+          <div class="right" data-title="Tikki">
+            <div class="cover"></div>
+            <div class="contents">
+              <h3>Tikki</h3>
+              <img src="assets/img/tikki-shot.PNG" alt="" style="width: 150px;">
+              <p>This is a project of mine focused on streaming. Invite your friends, family or complete strangers to a party to get together and play around with a in-built browser.</p>
+              <p style="margin-top: 0px;">Watch movies, play games, read something, listen to music - the opportunities are endless with this.</p>
+              <p style="margin-top: 0px;">Click <a href="https://youtu.be/SlrsdtkRe3s" target="_blank">here</a> for more info.</p>
+            </div>
+          </div>
+          <div class="top"></div>
+        </div>
+      </label>
+      <label class="block b11" for="book6">
+        <div class="block-inner">
+          <div class="back"></div>
+          <div class="bottom"></div>
+          <div class="front">
+            <div class="spine">Aria Disconnect</div>
+          </div>
+          <div class="left"></div>
+          <div class="right" data-title="Aria Disconnect">
+            <div class="cover"></div>
+            <div class="contents">
+              <h3>Aria Disconnect</h3>
+              <img src="assets/img/aria-shot.jpg" alt="" style="width: 150px;">
+              <p><a href="https://store.steampowered.com/app/1269910/Aria_Disconnect/" target="_blank">Aria Disconnect</a> is a 16-bit action-adventure. You are the protagonist Heri and you are going to follow the journey of his life crisis. The year is 2082, you are hooked to a machine, and there is only one way out, to disconnect.</p>
+              <p style="margin-top: 0px;"><a href="https://twitter.com/ariadisconnect?lang=en" target="_blank">Kimmo Savilampi</a> is the wonder behind all of this. I'm helping create systems like this <a href="https://twitter.com/i/status/1303933818613780481" target="_blank">ring menu</a>, but more notably large scale projects like a water physics system and a live midi player (more on this at a later date - look out on YouTube!).</p>
+              <p style="margin-top: 0px;">Click <a href="https://store.steampowered.com/app/1269910/Aria_Disconnect/" target="_blank">here</a> to wishlist it on Steam!</p>
+            </div>
+          </div>
+          <div class="top"></div>
+        </div>
+      </label>
+      <label class="block b12" for="book7">
+        <div class="block-inner">
+          <div class="back"></div>
+          <div class="bottom"></div>
+          <div class="front">
+            <div class="spine">Impact of Computers in Medicine</div>
+          </div>
+          <div class="left"></div>
+          <div class="right" data-title="The Impact of Computers in Medical Conditions">
+            <div class="cover"></div>
+            <div class="contents">
+              <h3>The Impact of Computers in Medical Conditions</h3>
+              <p>This is a piece of work I created for my EPQ, resulting in an A*.</p>
+              <p style="margin-top: 0px;">It covers how computers and technology has been used within prominent conditions - from general applications of hospital information systems to the care of critically ill patients.</p>
+              <p>Links are then made between the conditions and these uses, with suggestions and current uses specifically towards them.</p>
+              <p style="margin-top: 0px;">The future of technology in medicine is also explored here, to bring it all together to conclude the impact of computers in medical conditions.</p>
+              <p style="margin-top: 0px;">If you wish to read this piece of work, please click <a href="" target="_blank">here</a>. (link to be added when article is published)</p>
+            </div>
+          </div>
+          <div class="top"></div>
+        </div>
+      </label>
+      <label class="block b13 hidden" for="book8">
+        <div class="block-inner">
+          <div class="back"></div>
+          <div class="bottom"></div>
+          <div class="front">
+            <div class="spine"></div>
+          </div>
+          <div class="left"></div>
+          <div class="right" data-title="">
+            <div class="cover"></div>
+            <div class="contents">
+              <h1>Chapter 1</h1>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </div>
+          </div>
+          <div class="top"></div>
+        </div>
+      </label>
+      <label class="block b14 hidden" for="book9">
+        <div class="block-inner">
+          <div class="back"></div>
+          <div class="bottom"></div>
+          <div class="front">
+            <div class="spine"></div>
+          </div>
+          <div class="left"></div>
+          <div class="right" data-title="">
+            <div class="cover"></div>
+            <div class="contents">
+              <h1>Chapter 1</h1>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </div>
+          </div>
+          <div class="top"></div>
+        </div>
+      </label>
+      <label class="block b15" for="book10">
+        <div class="block-inner">
+          <div class="back"></div>
+          <div class="bottom"></div>
+          <div class="front">
+            <div class="spine">Socials</div>
+          </div>
+          <div class="left"></div>
+          <div class="right" data-title="Socials">
+            <div class="cover"></div>
+            <div class="contents" style="overflow: hidden;">
+              <i class="fab fa-linkedin" style="margin: auto;
+              text-align: center; font-size: 1.4em; color: #2867B2; margin-bottom: 55px; margin-left: 5px;"><h6><a href="https://www.linkedin.com/in/rhysimus/" target="_blank">LinkedIn</a></h6></i>
+              <i class="fab fa-github" style="margin: auto;
+              text-align: center; font-size: 1.4em; color: #211F1F; margin-bottom: 55px; margin-right: 5px;"><h6><a href="https://github.com/rhysimus" target="_blank">GitHub</a></h6></i>
+              <i class="fab fa-youtube" style="margin: auto;
+              text-align: center; font-size: 1.4em; color: #FF0000; margin-bottom: 55px; margin-left: 5px;"><h6><a href="https://www.youtube.com/channel/UCmZOYuFDTigdU3zVU4IrqBQ" target="_blank">YouTube</a></h6></i>
+              <i class="fab fa-discord" style="margin: auto;
+              text-align: center; font-size: 1.4em; color: #7289da; margin-bottom: 55px; margin-right: 4px;"><h6><a href="https://discord.gg/TgWNxUH" target="_blank">Discord</a></h6></i>
+              <i class="fa fa-coffee" style="margin: auto;
+              text-align: center; font-size: 1.4em; color: lightgray; margin-bottom: 55px; margin-left: 15px;"><h6><a href="https://ko-fi.com/rhysimus" target="_blank">Ko-Fi</a></h6></i>
+              <i class="fas fa-envelope" style="margin: auto;
+              text-align: center; font-size: 1.4em; margin-bottom: 55px; margin-right: 16px;"><h6><a href="mailto:rhys.morgan@rhysimus.com" target="_blank">Mail</a></h6></i>
+            </div>
+          </div>
+          <div class="top"></div>
+        </div>
+      </label>
+      <label class="block b16" for="book11">
+        <div class="block-inner">
+          <div class="back"></div>
+          <div class="bottom"></div>
+          <div class="front">
+            <div class="spine">Contact</div>
+          </div>
+          <div class="left"></div>
+          <div class="right" data-title="Contact">
+            <div class="cover"></div>
+            <div class="contents">
+              <h3>Contact me</h3>
+              <p>If you wish to contact me, please do so by dropping me an <a href="mailto:rhys.morgan@rhysimus.com" target="_blank">email</a> or a message on <a href="https://www.linkedin.com/in/rhysimus/" target="_blank">LinkedIn</a>. Thank you in advance!</p>
+            </div>
+          </div>
+          <div class="top"></div>
+        </div>
+      </label>
+    </div>
+  </form>
+  <div class="footer">Can't see anything or is it hard to read? Click <a href="read/">here</a>.</div> 
 </body>
+<script src="assets/js/script.js">resize()</script>
 </html>
