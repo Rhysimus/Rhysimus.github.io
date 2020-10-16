@@ -6,21 +6,6 @@
     <script src="https://kit.fontawesome.com/e9621d77db.js" crossorigin="anonymous"></script>
     <title>Rhysimus</title>
     <link rel="stylesheet" href="../assets/css/stylesr.css">
-    <script>
-        function resize() {
-        var header = document.getElementById("header");
-        if(window.innerWidth < 900){
-            //all 100
-            header.style.fontSize = ((window.innerWidth / 900) * 100).toString() + "px";
-            header.style.top = (-((window.innerWidth / 900) * 67)).toString() + "px";
-        }
-        else{
-            //first 3 30
-            header.style.fontSize = "100px";
-            header.style.top = "-67px";
-        }}
-        resize();
-    </script>
     <style>
         p {
             text-align: center;
@@ -32,4 +17,19 @@
     <p style="position: absolute;top: 75px;left: 50%;transform: translate(-50%, 0%)">A very interesting blog page. You're welcome.</p><br>
     <p><a href="https://rhysimus.com/blog/qr_codes_proposition">The exploration of QR codes (and my proposition)</a> - 16/10/2020</p>
 </body>
+<script>
+    function resize() {
+    var header = document.getElementById("header");
+    if(window.innerWidth < 900){
+        //all 100
+        header.style.fontSize = ((window.innerWidth / 900) * 100).toString() + "px";
+        header.style.top = (-((window.innerWidth / 900) * 67)).toString() + "px";
+    }
+    else{
+        //first 3 30
+        header.style.fontSize = "100px";
+        header.style.top = "-67px";
+    }}
+    resize();
+</script>
 </html>

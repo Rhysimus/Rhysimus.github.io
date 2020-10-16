@@ -22,21 +22,6 @@
             }
         }
     </style>
-    <script>
-        function resize() {
-        var header = document.getElementById("header");
-        if(window.innerWidth < 900){
-            //all 100
-            header.style.fontSize = ((window.innerWidth / 900) * 100).toString() + "px";
-            header.style.top = (-((window.innerWidth / 900) * 67)).toString() + "px";
-        }
-        else{
-            //first 3 30
-            header.style.fontSize = "100px";
-            header.style.top = "-67px";
-        }}
-        resize();
-    </script>
     <link rel="stylesheet" href="../../assets/css/stylesr.css">
 </head>
 <body onresize="resize()">
@@ -99,4 +84,19 @@
 <p style="text-align: left;">But we&apos;re working with computers here. Computers <em>can</em> handle such a thing because computers are pretty nifty too. It would be great to take this concept, perhaps create a Unicode to a Rainbow QR code converter and have a program that could handle images of this type to generate the correct outcome. I personally would enjoy to take this to a deeper level by perhaps creating some kind of architecture. Which I might. I&apos;m not sure. I just wanted to give this concept though as it is quite an interesting approach to such a widely available medium.</p>
 <p style="text-align: left;">So to conclude, we can use colour and shrink our QR codes to fit more data. Using colour is very practical - allowing for more options per section, but shrinking to fit more data limits the reading to a computer instead of a camera. We can use both, one, or none. Likely none. This is just a concept! Thank you for reading.</p>
 </body>
+<script>
+    function resize() {
+    var header = document.getElementById("header");
+    if(window.innerWidth < 900){
+        //all 100
+        header.style.fontSize = ((window.innerWidth / 900) * 100).toString() + "px";
+        header.style.top = (-((window.innerWidth / 900) * 67)).toString() + "px";
+    }
+    else{
+        //first 3 30
+        header.style.fontSize = "100px";
+        header.style.top = "-67px";
+    }}
+    resize();
+</script>
 </html>
