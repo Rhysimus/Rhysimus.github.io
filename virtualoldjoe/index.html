@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtual Old Joe</title>
+</head>
+<body style="text-align: center;">
+    <h1><u>Virtual Old Joe</u></h1>
+    <h2>(this is in no way affiliated with the University of Birmingham, and is a joke.)</h2>
+    <video src="oldjoe1hour.mp4" id="oldjoe" loop controls onclick="calculate()" onfocus="calculate()" onplaying="isLoaded()"></video>
+    <div style="border-style: dotted; border-width: 5px; margin: 5px;">
+        <p>Virtual Old Joe is a recreation of the Real Old Joe but in a virtual space.</p>
+        <p>Please press play on the video, and Virtual Old Joe will automatically bong on this website.</p>
+        <p>It should bong on the hour, give or take.</p>
+        <p>Please read more about Old Joe <a href="https://www.birmingham.ac.uk/university/campus-destination/old-joe.aspx" target="_blank">here</a>.</p>
+    </div>
+</body>
+<script>
+    var video = document.getElementById("oldjoe");
+    var d = new Date();
+    function calculate()
+    {
+        video.currentTime = (d.getMinutes() * 60) + d.getSeconds() + 3;
+    }
+    function isLoaded()
+    {
+        video.controls = false;
+    }
+</script>
+</html>
