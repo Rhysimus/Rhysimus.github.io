@@ -25,10 +25,10 @@
 </body>
 <script>
     var video = document.getElementById("oldjoe");
-    var d = new Date();
     function calculate()
     {
-        video.currentTime = (d.getMinutes() * 60) + d.getSeconds() + 3;
+        var d = new Date();
+        video.currentTime = (d.getMinutes() * 60) + d.getSeconds();
     }
     function isLoaded()
     {
