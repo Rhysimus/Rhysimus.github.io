@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bonk Esolang</title>
+    <script src="bonk.js"></script>
+    <style>
+        @media only screen and (max-width: 800px) {
+            html {
+                width: 100%;
+            display: block;
+    margin-left: auto;
+    margin-right: auto;
+            }
+        }
+        @media only screen and (min-width: 800px) {
+            html {
+                width: 60%;
+            display: block;
+    margin-left: 20%;
+    margin-right: auto;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="../assets/css/stylesr.css">
+</head>
+<body onresize="resize()">
+    <h1 id="header" class="header">Bonk</h1>
+    <p>Bonk is an <a href="https://en.wikipedia.org/wiki/Esoteric_programming_language" target="_blank">esoteric programming language</a> which is a deviation of <a href="https://esolangs.org/wiki/Brainfuck" target="_blank">brainf*ck</a>. As such, it is a turing complete system and any program (with some willpower) can be generated. This website hosts a few cool things, namely converting multiple different language(s) into Bonk, which this website can compile and run. There are also Bonk equivalent files that can be loaded.</p>
+    <p><span style="color: red;">[WARNING!]</span> The demo works client-side and in pure JS, so as a result infinite loops do not return anything and that introduces the <a href="https://en.wikipedia.org/wiki/Halting_problem" target="_blank">halting problem</a> (without using Node.js or equivalent solutions to multithreading). So the worst this demo can do is crash your browser.</p>
+    <p style="text-align: center;">Find the blog write-up <a href="https://rhysimus.com/blog/bonk/" target="_blank">here</a> and the initial git commit <a href="https://github.com/Rhysimus/Bonk" target="_blank">here</a>.</p>
+    <table border="1" style="margin: auto;">
+        <tbody>
+        <tr>
+        <th>Command</th>
+        <th>Description</th>
+        </tr>
+        <tr>
+        <td>BONK</td>
+        <td>Move the pointer to the right</td>
+        </tr>
+        <tr>
+        <td>KNOB</td>
+        <td>Move the pointer to the left</td>
+        </tr>
+        <tr>
+        <td>BONKBONK</td>
+        <td>Increment the memory cell at the pointer</td>
+        </tr>
+        <tr>
+        <td>KNOBKNOB</td>
+        <td>Decrement the memory cell at the pointer</td>
+        </tr>
+        <tr>
+        <td>BONKED</td>
+        <td>Output the character signified by the cell at the pointer</td>
+        </tr>
+        <tr>
+        <td>KNOBED</td>
+        <td>Input a character and store it in the cell at the pointer</td>
+        </tr>
+        <tr>
+        <td>BOINK</td>
+        <td>Jump past the matching&nbsp;<code>KNIOB</code>&nbsp;if the cell at the pointer is 0</td>
+        </tr>
+        <tr>
+        <td>KNIOB</td>
+        <td>Jump back to the matching&nbsp;<code>BOINK</code>&nbsp;if the cell at the pointer is nonzero</td>
+        </tr>
+        </tbody>
+    </table>
+    <br>
+    <table style="margin: auto; width: 100%;">
+        <tbody>
+            <tr>
+                <th>Code</th>
+                <th>Output</th>
+            </tr>
+            <tr>
+                <th>
+                    <select id="inputOptions" name="inputOptions">
+                        <option value="Bonk">Bonk</option>
+                        <option value="Brainf">Brainf*ck</option>
+                    </select>
+                    <select id="files" name="files" onchange="fileClick()">
+                        <option value="null">Files</option>
+                        <option value="helloworld">helloworld.txt</option>
+                        <option value="oldjoe">oldjoe.txt</option>
+                        <option value="inout">inout.txt</option>
+                    </select>
+                    <button type="button" onclick="clearCode()">Clear</button>
+                </th>
+                <th>
+                    <select id="outputOptions" name="outputOptions">
+                        <option value="RunBonk">Run Bonk</option>
+                        <option value="ConvertToBonk">Convert to Bonk</option>
+                    </select>
+                    <button type="button" onclick="copy()">Copy</button>
+                </th>
+            </tr>
+            <tr>
+                <td><textarea name="" id="code" cols="30" rows="10" style="width: 100%; resize: none";></textarea></td>
+                <td><textarea name="" id="output" cols="30" rows="10" style="width: 100%; resize: none;"></textarea></td>
+            </tr>
+            <tr>
+                <th style="text-align: right;">Input:</th>
+                <td><textarea name="" id="input" cols="30" rows="1" style="width: 100%; resize: none;"></textarea></td>
+            </tr>
+            <tr>
+                <td>
+                </td>
+                <td style="margin: auto; text-align: center;">
+                    <button type="button" onclick="run()">Run</button>
+                    <button type="button" onclick="runInNewWindow()">Run in new window</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <br><br><br><br><br><br><br><br><br><br><br>
+</body>
+<script>
+    function resize() {
+    var header = document.getElementById("header");
+    if(window.innerWidth < 900){
+        //all 100
+        header.style.fontSize = ((window.innerWidth / 900) * 100).toString() + "px";
+        header.style.top = (-((window.innerWidth / 900) * 67)).toString() + "px";
+    }
+    else{
+        //first 3 30
+        header.style.fontSize = "100px";
+        header.style.top = "-67px";
+    }}
+    resize();
+</script>
+</html>

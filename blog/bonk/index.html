@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rhysimus</title>
+    <style>
+        @media only screen and (max-width: 800px) {
+            html {
+                width: 100%;
+            display: block;
+    margin-left: auto;
+    margin-right: auto;
+            }
+        }
+        @media only screen and (min-width: 800px) {
+            html {
+                width: 60%;
+            display: block;
+    margin-left: 20%;
+    margin-right: auto;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="../../assets/css/stylesr.css">
+</head>
+<body onresize="resize()">
+    <h1 id="header" class="header">Rhysimus</h1>
+    <p style="text-align: center;"><u><span style="font-size: 30px; text-shadow: rgba(136, 136, 136, 0.8) 3px 3px 2px;">Bonk - an esoteric programming language</span></u></p>
+<p style="text-align: center;"><u><span style="font-size: 30px; text-shadow: rgba(136, 136, 136, 0.8) 3px 3px 2px;">(1/12/2020)</span></u></p>
+<p>What is this creation. I cannot believe this actually happened. What started as a gag turned into a genuine project - making an <a href="https://en.wikipedia.org/wiki/Esoteric_programming_language" target="_blank" rel="noopener">esoteric programming language</a>.</p>
+<p>It's essentially a programming language that is purposefully hard to follow and is not nice for us humans to work with. They go far away from traditional programming languages like C# and Java and instead enters the realm of madness (put lightly). Languages of these kind are <a href="https://en.wikipedia.org/wiki/Turing_completeness" target="_blank" rel="noopener">Turing-complete</a>, which means it can simulate a Turing machine (a system of rules, states and transitions) making the possibilities for such a language endlessly available to computational means.</p>
+<p>I think it's crazy to think things like this can be done. The language that's been made here is a derivation of the esolang <a href="https://esolangs.org/wiki/Brainfuck" target="_blank" rel="noopener">brainf*ck</a>. What a name. It is possibly the most famous esolang, which is incredibly abstract. It was made by <a title="Urban M&uuml;ller" href="https://esolangs.org/wiki/Urban_M%C3%BCller">Urban M&uuml;ller</a> in 1993 to write the smallest compiler for Amiga OS.&nbsp;It works by operating on an array of memory cells and using a pointer it can do numerous functions. Low-level, sure, but that in itself can do a lot:</p>
+<table class="wikitable" border="1" style="margin: auto;">
+<tbody>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+<tr>
+<td><code>&gt;</code></td>
+<td>Move the pointer to the right</td>
+</tr>
+<tr>
+<td><code>&lt;</code></td>
+<td>Move the pointer to the left</td>
+</tr>
+<tr>
+<td><code>+</code></td>
+<td>Increment the memory cell at the pointer</td>
+</tr>
+<tr>
+<td><code>-</code></td>
+<td>Decrement the memory cell at the pointer</td>
+</tr>
+<tr>
+<td><code>.</code></td>
+<td>Output the character signified by the cell at the pointer</td>
+</tr>
+<tr>
+<td><code>,</code></td>
+<td>Input a character and store it in the cell at the pointer</td>
+</tr>
+<tr>
+<td><code>[</code></td>
+<td>Jump past the matching&nbsp;<code>]</code>&nbsp;if the cell at the pointer is 0</td>
+</tr>
+<tr>
+<td><code>]</code></td>
+<td>Jump back to the matching&nbsp;<code>[</code>&nbsp;if the cell at the pointer is nonzero</td>
+</tr>
+</tbody>
+</table>
+<p style="text-align: center;">(table courtesy of <a href="https://esolangs.org/wiki/Brainfuck#Language_overview" target="_blank" rel="noopener">Esolang</a>)</p>
+<p>Bonk essentially replaces brainf*ck's eight characters with eight strings, each with reference to the word "Bonk". It's strange what your brain comes up with at night, especially with other equally sleep-deprived individuals:</p>
+<table border="1" style="margin: auto;">
+<tbody>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>BONK</td>
+<td>Move the pointer to the right</td>
+</tr>
+<tr>
+<td>KNOB</td>
+<td>Move the pointer to the left</td>
+</tr>
+<tr>
+<td>BONKBONK</td>
+<td>Increment the memory cell at the pointer</td>
+</tr>
+<tr>
+<td>KNOBKNOB</td>
+<td>Decrement the memory cell at the pointer</td>
+</tr>
+<tr>
+<td>BONKED</td>
+<td>Output the character signified by the cell at the pointer</td>
+</tr>
+<tr>
+<td>KNOBED</td>
+<td>Input a character and store it in the cell at the pointer</td>
+</tr>
+<tr>
+<td>BOINK</td>
+<td>Jump past the matching&nbsp;<code>KNIOB</code>&nbsp;if the cell at the pointer is 0</td>
+</tr>
+<tr>
+<td>KNIOB</td>
+<td>Jump back to the matching&nbsp;<code>BOINK</code>&nbsp;if the cell at the pointer is nonzero</td>
+</tr>
+</tbody>
+</table>
+<p>It plays with the word BONK, inverting it to KNOB for inverse operations. All commands are variations of this rule. KNOB isn't meant to have any negative connotations either, it just fit and made sense. To a sleep-deprived mind at least.</p>
+<p>So you might say that this is just replacing commands and it's done. But it was actually quite a nightmare because of the different types of parsing. Brainf*ck works with a long string of characters, whereas Bonk works with strings broken up by spaces. This can be shown through comparing brainf*ck's "Hello World" script vs Bonk's version:</p>
+<table style="width: 100%; border-collapse: collapse; margin: auto" border="1">
+<tbody>
+<tr style="height: 17px;">
+<td style="width: 1.10497%; height: 17px; text-align: center;"><strong>brainf*ck</strong></td>
+<td style="width: 98.895%; height: 17px; text-align: center;"><strong>Bonk</strong></td>
+</tr>
+<tr style="height: 17px;">
+<td style="width: 1.10497%; height: 17px;">
+<pre>++++++++[&gt;++++[&gt;++&gt;+++&gt;+++&gt;+<br />&lt;&lt;&lt;&lt;-]&gt;+&gt;+&gt;-&gt;&gt;+[&lt;]&lt;-]&gt;&gt;.&gt;---<br />.+++++++..+++.&gt;&gt;.&lt;-.&lt;.+++.--<br />----.--------.&gt;&gt;+.&gt;++.</pre>
+</td>
+<td style="width: 98.895%; height: 17px;">BONKBONK BONKBONK BONKBONK BONKBONK BONKBONK BONKBONK BONKBONK BONKBONK BOINK BONK BONKBONK BONKBONK BONKBONK BONKBONK BOINK BONK BONKBONK BONKBONK BONK BONKBONK BONKBONK BONKBONK BONK BONKBONK BONKBONK BONKBONK BONK BONKBONK KNOB KNOB KNOB KNOB KNOBKNOB KNIOB BONK BONKBONK BONK BONKBONK BONK KNOBKNOB BONK BONK BONKBONK BOINK KNOB KNIOB KNOB KNOBKNOB KNIOB BONK BONK BONKED BONK KNOBKNOB KNOBKNOB KNOBKNOB BONKED BONKBONK BONKBONK BONKBONK BONKBONK BONKBONK BONKBONK BONKBONK BONKED BONKED BONKBONK BONKBONK BONKBONK BONKED BONK BONK BONKED KNOB KNOBKNOB BONKED KNOB BONKED BONKBONK BONKBONK BONKBONK BONKED KNOBKNOB KNOBKNOB KNOBKNOB KNOBKNOB KNOBKNOB KNOBKNOB BONKED KNOBKNOB KNOBKNOB KNOBKNOB KNOBKNOB KNOBKNOB KNOBKNOB KNOBKNOB KNOBKNOB BONKED BONK BONK BONKBONK BONKED BONK BONKBONK BONKBONK BONKED</td>
+</tr>
+</tbody>
+</table>
+<p>By no stretch of the imagination is Bonk meant to be small, compact and relatively efficient like brainf*ck but it is a sight to see when it works.</p>
+<p>Anyway, back to the task at hand. The implementation that became the final version is a middleman-esque ploy on compiling. When you input Bonk code, it converts that into brainf*ck which it then runs as brainf*ck code. I'd have no problem wanting to make this so Bonk runs on its own compiler, but I feel like this way makes it so much more nicer. It also allows for equivalent conversions between the two languages (which is something I plan to extend to other languages because I think this is great). A start on this is up on the Bonk live demo which will be linked at the bottom of this post.</p>
+<p>Right now this demo is able to convert brainf*ck into Bonk, and take Bonk code which runs within the browser. I've also made it so it can output things into a new window, which is nice for ASCII art or for forever calculating expressions. I've preloaded some files onto the website for people to load and play around with. These are mostly brainf*ck translations, but there is a few unique ones.</p>
+<p>Surprisingly, I did actually learn a fair bit. The main thing is sleep is a virtue and I should get more of it, but the other thing is why esoteric languages of these kinds are actually really intuitive. The fact that it is Turing-complete is awesome - being able to play with the constraints of a low-level limited memory array while being able to input and output data is quite amazing. It made me do JavaScript too, and implement a fair few things here and there along with a comprehensible but simple UI on the demo to make this a genuine translator and compiler.</p>
+<p>It also gave me an excuse to write a blog post. It's been a while, and I told myself I would do this more. ColourQR is getting there, I've been prototyping that a fair bit and there's a few things I've researched, realised and considered for making it great. More on that later. Thanks for reading.</p>
+<p><span style="color: red;">[WARNING!]</span> The demo works client-side and in pure JS, so as a result infinite loops do not return anything and that introduces the <a href="https://en.wikipedia.org/wiki/Halting_problem" target="_blank">halting problem</a> (without using Node.js or equivalent solutions to multithreading). So the worst this demo can do is crash your browser.</p>
+<p>Find the Bonk live demo <a href="https://rhysimus.com/bonk/" target="_blank" rel="noopener">here</a>. Also find the initial git repo <a href="https://github.com/Rhysimus/Bonk" target="_blank" rel="noopener">here</a>.</p>
+<div id="disqus_thread"></div>
+<script>
+
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+
+var disqus_config = function () {
+this.page.url = "https://rhysimus.com/blog/bonk/";  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = '2'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://rhysimus-1.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+                            
+</body>
+<script>
+    function resize() {
+    var header = document.getElementById("header");
+    if(window.innerWidth < 900){
+        //all 100
+        header.style.fontSize = ((window.innerWidth / 900) * 100).toString() + "px";
+        header.style.top = (-((window.innerWidth / 900) * 67)).toString() + "px";
+    }
+    else{
+        //first 3 30
+        header.style.fontSize = "100px";
+        header.style.top = "-67px";
+    }}
+    resize();
+</script>
+</html>
